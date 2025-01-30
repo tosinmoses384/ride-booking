@@ -14,9 +14,8 @@ export default function RegistrationScreen() {
   const { user } = useLocalSearchParams() as any;
   const parsedUser = JSON.parse(user);
 
-   // MAYBE UNCOMMENT LATER
+  // MAYBE UNCOMMENT LATER
   // const parsedUser = user;
-
 
   const [emailFormatWarning, setEmailFormatWarning] = useState("");
   const [showWarning, setShowWarning] = useState(false);
@@ -33,37 +32,13 @@ export default function RegistrationScreen() {
       [key]: value,
     }));
   };
-  
 
   const handleSubmit = async () => {
     setLoading(true);
 
     router.push({
-      pathname: "/(routes)/email-verification"
+      pathname: "/(routes)/email-verification",
     });
-
-    // UNCOMMENT LATER
-    // await axios
-    //   .post(`${process.env.EXPO_PUBLIC_SERVER_URI}/email-otp-request`, {
-    //     email: formData.email,
-    //     name: formData.name,
-    //     userId: parsedUser.id,
-    //   }) 
-    //   .then((res) => {
-    //     setLoading(false);
-    //     const userData: any = {
-    //       id: parsedUser.id,
-    //       name: formData.name,
-    //       email: formData.email,
-    //       phone_number: parsedUser.phone_number,
-    //       token: res.data.token,
-    //     };
-    //   })
-    //   .catch((error) => {
-    //     setLoading(false);
-    //     console.log(error);
-    //   });
-
   };
 
   return (

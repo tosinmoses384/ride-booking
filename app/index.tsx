@@ -16,7 +16,10 @@ export default function Index() {
           setisLoggedIn(!!accessToken);
         }
       } catch (error) {
-        console.log("Failed to retrieve access token from async storage", error);
+        console.log(
+          "Failed to retrieve access token from async storage",
+          error
+        );
       } finally {
         if (isMounted) {
           setisLoading(false);
@@ -32,59 +35,10 @@ export default function Index() {
   }, []);
 
   if (isLoading) {
-    return null; 
+    return null;
   }
 
   return (
     <Redirect href={!isLoggedIn ? "/(routes)/onboarding" : "/(tabs)/home"} />
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { Redirect } from "expo-router";
-// import { useState } from "react";
-
-// export default function index() {
-//   const [isLoggedIn, setisLoggedIn] = useState(false)
-
-//   return (
-//     <Redirect href={!isLoggedIn ? "/(routes)/onboarding" : "/(tabs)/home"} />
-    
-//   );
-// }

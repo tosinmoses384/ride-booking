@@ -24,26 +24,6 @@ export default function EmailVerificationScreen() {
     setLoader(true);
     const otpNumbers = `${otp}`;
     router.push("/(tabs)/home");
-
-    //MAY UNCOMMENT LATER
-    // await axios
-    //   .put(`${process.env.EXPO_PUBLIC_SERVER_URI}/email-otp-verify`, {
-    //     token: parsedUser.token,
-    //     otp: otpNumbers,
-    //   })
-    //   .then(async (res: any) => {
-    //     setLoader(false);
-    //     await AsyncStorage.setItem("accessToken", res.data.accessToken);
-    //     router.push("/(tabs)/home");
-    //   })
-    //   .catch((error) => {
-    //     setLoader(false);
-    //     Toast.show(error.message, {
-    //       placement: "bottom",
-    //       type: "danger",
-    //     });
-    //   });
-
   };
 
   return (

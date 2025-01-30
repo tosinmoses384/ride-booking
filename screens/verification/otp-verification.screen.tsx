@@ -12,7 +12,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { commonStyles } from "@/styles/common.style";
 import { useToast } from "react-native-toast-notifications";
 import axios from "axios";
-import AsyncStorage from "@react-native-async-storage/async-storage"; 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function OtpVerificationScreen() {
   const [otp, setOtp] = useState("");
@@ -22,8 +22,8 @@ export default function OtpVerificationScreen() {
 
   const handleSubmit = async () => {
     router.push({
-      pathname: "/(tabs)/home", 
-      // pathname: "/(routes)/registration", 
+      pathname: "/(tabs)/home",
+      // pathname: "/(routes)/registration",
       // params: { user: JSON.stringify(res.data.user) },
     });
 
@@ -36,45 +36,10 @@ export default function OtpVerificationScreen() {
       const otpNumbers = `${otp}`;
 
       router.push({
-          pathname: "/(tabs)/home", 
-          // pathname: "/(routes)/registration", 
-          // params: { user: JSON.stringify(res.data.user) },
-        });
-        
-        
-        // UNCOMMENT LATER
-      // await axios
-      //   .post(`${process.env.EXPO_PUBLIC_SERVER_URI}/verify-otp`, {
-      //     phone_number: phoneNumber,
-      //     otp: otpNumbers,
-      //   })
-      //   .then(async (res) => {
-      //     setLoader(false);
-      //     if (res.data.user.email === null) {
-
-
-      //       // UNCOMMENT LATER
-      //       // router.push({
-      //       //   pathname: "/(routes)/registration", 
-      //       //   params: { user: JSON.stringify(res.data.user) },
-      //       // });
-
-      //       router.push("/(tabs)/home");
-
-      //       toast.show("Account verified!");
-      //     } else {
-      //       await AsyncStorage.setItem("accessToken", res.data.accessToken);
-      //       router.push("/(tabs)/home");
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     setLoader(false);
-      //     toast.show("Something went wrong! please re check your otp!", {
-      //       type: "danger",
-      //       placement: "bottom",
-      //     });
-      //   });
-
+        pathname: "/(tabs)/home",
+        // pathname: "/(routes)/registration",
+        // params: { user: JSON.stringify(res.data.user) },
+      });
     }
   };
 
@@ -99,7 +64,7 @@ export default function OtpVerificationScreen() {
             <Button
               title="Verify"
               onPress={() => handleSubmit()}
-              disabled={loader}  
+              disabled={loader}
             />
           </View>
           <View style={[external.mb_15]}>
